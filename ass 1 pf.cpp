@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-int main()
+int main()hahahahahahaahahahaaha
 {
     string patientName;
     string patientCategory;
