@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     string patientName;
-    string patientCategory;
+    string patientCategory;bala bala 
     string arrivalTime;
 
     int age;
