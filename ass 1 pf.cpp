@@ -3,7 +3,7 @@
 using namespace std;
 
 //fungsi prototype
-
+void getPatientInfo(string &patientName, int &age, string &patientCategory, string &arrivalTime);
 
 //fungsi utama
 int main()
@@ -30,20 +30,7 @@ int main()
         cout << "========================================" << endl;
 
         //masuki informasi pesakit call funtions
-        cout << "Enter patient name: ";
-        cin.ignore();
-        getline(cin, patientName);
-
-        cout << "Enter age: ";
-        cin >> age;
-
-        cin.ignore();
-
-        cout << "Enter patient category (Emergency/Senior Citizen/Normal): ";
-        getline(cin, patientCategory);
-
-        cout << "Enter arrival time: ";
-        getline(cin, arrivalTime);
+       getPatientInfo( patientName,  age, patientCategory, arrivalTime);
 
         // Assign priority and queue number call funtons
         if (patientCategory == "Emergency" ||
@@ -136,8 +123,23 @@ int main()
 }
 
 //funtions _ info
+ void getPatientInfo(string &patientName, int &age, string &patientCategory, string &arrivalTime){
+ 
+ cout << "Enter patient name: ";
+        cin.ignore();
+        getline(cin, patientName);
 
+        cout << "Enter age: ";
+        cin >> age;
 
+        cin.ignore();
+
+        cout << "Enter patient category (Emergency/Senior Citizen/Normal): ";
+        getline(cin, patientCategory);
+
+        cout << "Enter arrival time: ";
+        getline(cin, arrivalTime);
+}
 //funtions queue
 
 // funtion display
