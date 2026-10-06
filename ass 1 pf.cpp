@@ -18,6 +18,9 @@ int main()
     int seniorCount = 1;
     int normalCount = 1;
 
+    void displayRegistrationInformation (string patientName , string patientCategory , string arrivalTime , int age ,
+    int priorityLevel , int waitingTime , string queueNumber ) ;
+
     do
     {
         cout << "\n========================================" << endl;
@@ -82,19 +85,9 @@ int main()
         }
 
         // Display registration information
-        cout << "\n========================================" << endl;
-        cout << "        REGISTRATION SUCCESSFUL         " << endl;
-        cout << "========================================" << endl;
-
-        cout << "Patient Name   : " << patientName << endl;
-        cout << "Age            : " << age << endl;
-        cout << "Category       : " << patientCategory << endl;
-        cout << "Queue Number   : " << queueNumber << endl;
-        cout << "Priority Level : " << priorityLevel << endl;
-        cout << "Arrival Time   : " << arrivalTime << endl;
-        cout << "Estimated Wait : " << waitingTime << " minutes" << endl;
-
-        cout << "\n----------------------------------------" << endl;
+         displayRegistrationInformation ( patientName , patientCategory , arrivalTime , age , priorityLevel ,
+	     waitingTime , queueNumber ) ; 
+        
 
         // Special message
         if (priorityLevel == 1)
@@ -128,3 +121,22 @@ int main()
 
     return 0;
 }
+
+// Display registration information
+        void displayRegistrationInformation ( string patientName , string patientCategory , string
+		arrivalTime , int age ,int priorityLevel , int waitingTime , string queueNumber ) {
+		
+        cout << "\n========================================" << endl;
+        cout << "        REGISTRATION SUCCESSFUL         " << endl;
+        cout << "========================================" << endl;
+
+        cout << "Patient Name   : " << patientName << endl;
+        cout << "Age            : " << age << endl;
+        cout << "Category       : " << patientCategory << endl;
+        cout << "Queue Number   : " << queueNumber << endl;
+        cout << "Priority Level : " << priorityLevel << endl;
+        cout << "Arrival Time   : " << arrivalTime << endl;
+        cout << "Estimated Wait : " << waitingTime << " minutes" << endl; 
+        
+        cout << "\n----------------------------------------" << endl;
+    }
