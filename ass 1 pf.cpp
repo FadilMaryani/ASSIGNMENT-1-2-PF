@@ -14,8 +14,9 @@ int main()
     string queueNumber;
 
     cout << "========================================" << endl;
-    cout << "      HOSPITAL PATIENT REGISTRATION ANIS    " << endl;
+    cout << "      HOSPITAL PATIENT REGISTRATION PONMALAR" << endl;
     cout << "========================================" << endl;
+    
 
     cout << "Enter patient name: ";
     getline(cin, patientName);
