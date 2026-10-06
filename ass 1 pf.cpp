@@ -151,3 +151,24 @@ void displayPriorityMessage(int priorityLevel)
         
         cout << "\n----------------------------------------" << endl;
     }
+// Function Definition
+int assignPriority(string category)
+{
+    if (category == "Emergency" || category == "emergency")
+    {
+        return 1;
+    }
+    else if (category == "Senior Citizen" ||
+             category == "senior citizen")
+    {
+        return 2;
+    }
+    else if (category == "Normal" || category == "normal")
+    {
+        return 3;
+    }
+    else
+    {
+        return 0;
+    }
+}
