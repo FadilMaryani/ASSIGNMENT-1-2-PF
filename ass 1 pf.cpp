@@ -2,6 +2,9 @@
 #include <string>
 using namespace std;
 
+// Function Prototype
+int assignPriority(string category);
+
 int main()
 {
     string patientName;
@@ -42,53 +45,52 @@ int main()
         cout << "Enter arrival time: ";
         getline(cin, arrivalTime);
 
-        // Assign priority and queue number
-        if (patientCategory == "Emergency" ||
-            patientCategory == "emergency")
-        {
-            priorityLevel = 1;
+        // Function Call
+        priorityLevel = assignPriority(patientCategory);
 
+        // Check invalid category
+        if (priorityLevel == 0)
+        {
+            cout << "\nInvalid patient category!" << endl;
+            cout << "Please enter Emergency, Senior Citizen or Normal." << endl;
+
+            cout << "\nRegister another patient? (Y/N): ";
+            cin >> continueRegister;
+
+            continue;
+        }
+
+        // Assign queue number and waiting time
+        if (priorityLevel == 1)
+        {
             queueNumber = "E00" + to_string(emergencyCount);
             emergencyCount++;
 
             waitingTime = 0;
             patientCategory = "Emergency";
         }
-        else if (patientCategory == "Senior Citizen" ||
-                 patientCategory == "senior citizen")
+        else if (priorityLevel == 2)
         {
-            priorityLevel = 2;
-
             queueNumber = "S00" + to_string(seniorCount);
             seniorCount++;
 
             waitingTime = 10;
             patientCategory = "Senior Citizen";
         }
-        else if (patientCategory == "Normal" ||
-                 patientCategory == "normal")
+        else
         {
-            priorityLevel = 3;
-
             queueNumber = "N00" + to_string(normalCount);
             normalCount++;
 
             waitingTime = 20;
             patientCategory = "Normal";
         }
-        else
-        {
-            cout << "\nInvalid patient category!" << endl;
-            cout << "Please enter Emergency, Senior Citizen or Normal." << endl;
-
-            continue;
-        }
 
         // Display registration information
          displayRegistrationInformation ( patientName , patientCategory , arrivalTime , age , priorityLevel ,
 	     waitingTime , queueNumber ) ; 
-        
 
+		
         // Special message
         if (priorityLevel == 1)
         {
