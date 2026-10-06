@@ -5,6 +5,9 @@ using namespace std;
 // Function Prototype
 int assignPriority(string category);
 
+void displayRegistrationInformation (string patientName , string patientCategory , string arrivalTime , int age ,
+    int priorityLevel , int waitingTime , string queueNumber ) ;
+
 int main()
 {
     string patientName;
@@ -20,9 +23,6 @@ int main()
     int emergencyCount = 1;
     int seniorCount = 1;
     int normalCount = 1;
-
-    void displayRegistrationInformation (string patientName , string patientCategory , string arrivalTime , int age ,
-    int priorityLevel , int waitingTime , string queueNumber ) ;
 
     do
     {
