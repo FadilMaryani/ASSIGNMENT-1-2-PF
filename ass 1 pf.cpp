@@ -4,7 +4,7 @@ using namespace std;
 
 // Function Prototype
 int assignPriority(string category);
-
+void displayPriorityMessage(int priorityLevel);
 void displayRegistrationInformation (string patientName , string patientCategory , string arrivalTime , int age ,
     int priorityLevel , int waitingTime , string queueNumber ) ;
 
@@ -92,25 +92,9 @@ int main()
 
 		
         // Special message
-        if (priorityLevel == 1)
-        {
-            cout << "!!! EMERGENCY PATIENT !!!" << endl;
-            cout << "Please proceed to the emergency department." << endl;
-            cout << "Your case will be attended immediately." << endl;
-        }
-        else if (priorityLevel == 2)
-        {
-            cout << "PRIORITY PATIENT" << endl;
-            cout << "You will be served before normal patients." << endl;
-        }
-        else
-        {
-            cout << "STANDARD PATIENT" << endl;
-            cout << "Please wait until your queue number is called." << endl;
-        }
+        displayPriorityMessage( priorityLevel);
 
-        cout << "----------------------------------------" << endl;
-
+		
         // Ask for another patient
         cout << "\nRegister another patient? (Y/N): ";
         cin >> continueRegister;
@@ -135,6 +119,31 @@ int main()
         cout << "Patient Name   : " << patientName << endl;
         cout << "Age            : " << age << endl;
         cout << "Category       : " << patientCategory << endl;
+
+// Special message
+void displayPriorityMessage(int priorityLevel)
+{
+    cout << "\n----------------------------------------" << endl;
+
+    if (priorityLevel == 1)
+    {
+        cout << "!!! EMERGENCY PATIENT !!!" << endl;
+        cout << "Please proceed to the emergency department." << endl;
+        cout << "Your case will be attended immediately." << endl;
+    }
+    else if (priorityLevel == 2)
+    {
+        cout << "PRIORITY PATIENT" << endl;
+        cout << "You will be served before normal patients." << endl;
+    }
+    else
+    {
+        cout << "STANDARD PATIENT" << endl;
+        cout << "Please wait until your queue number is called." << endl;
+    }
+
+    cout << "----------------------------------------" << endl;
+}			
         cout << "Queue Number   : " << queueNumber << endl;
         cout << "Priority Level : " << priorityLevel << endl;
         cout << "Arrival Time   : " << arrivalTime << endl;
