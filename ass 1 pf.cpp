@@ -7,7 +7,7 @@ void patientInformation(string &patientName, string &arrivalTime, string &patien
 //function petingkan siapa
 
 //function untuk display maklumat pesakit
-
+void displayPatientInformation(string &patientName, string &arrivalTime, string &patientCategory, int &age, int &priorityLevel, int &waitingTime, string &queueNumber);
 //function untuk panggilan sape yang penting
 
 
