@@ -2,144 +2,79 @@
 #include <string>
 using namespace std;
 
-//fungsi prototype
-void getPatientInfo(string &patientName, int &age, string &patientCategory, string &arrivalTime);
+//function mintak maklumat pesakit
+void patientInformation(string &patientName, string &arrivalTime, string &patientCategory, int &age, string &patientCategoryL);
+//function petingkan siapa
 
-//fungsi utama
-int main()
-{
-    //declare variable
+//function untuk display maklumat pesakit
+
+//function untuk panggilan sape yang penting
+
+
+int main() {
     string patientName;
-    string patientCategory;
     string arrivalTime;
-    char continueRegister;
-
     int age;
+    string patientCategory;
+    string patientCategoryL;
+
     int priorityLevel;
     int waitingTime;
-    string queueNumber;
 
     int emergencyCount = 1;
     int seniorCount = 1;
     int normalCount = 1;
-//gelung
-    do
-    {
-        cout << "\n========================================" << endl;
-        cout << "      HOSPITAL PATIENT REGISTRATION     " << endl;
-        cout << "========================================" << endl;
 
-        //masuki informasi pesakit call funtions
-       getPatientInfo( patientName,  age, patientCategory, arrivalTime);
+    string queueNumber;
+    char choice;
 
-        // Assign priority and queue number call funtons
-        if (patientCategory == "Emergency" ||
-            patientCategory == "emergency")
-        {
-            priorityLevel = 1;
+    //looping
+    do {
+        //function mintak maklumat pesakit
+        patientInformation(patientName, arrivalTime, patientCategory, age, patientCategoryL);
+        //function petingkan siapa
+       
+        //function untuk display maklumat pesakit
+        
+        //function untuk panggilan sape yang penting
+       
 
-            queueNumber = "E00" + to_string(emergencyCount);
-            emergencyCount++;
+        cout << "\nRegister another patient?(Y/N): ";
+        cin >> choice;
+        cin.ignore();
 
-            waitingTime = 0;
-            patientCategory = "Emergency";
-        }
-        else if (patientCategory == "Senior Citizen" ||
-                 patientCategory == "senior citizen")
-        {
-            priorityLevel = 2;
-
-            queueNumber = "S00" + to_string(seniorCount);
-            seniorCount++;
-
-            waitingTime = 10;
-            patientCategory = "Senior Citizen";
-        }
-        else if (patientCategory == "Normal" ||
-                 patientCategory == "normal")
-        {
-            priorityLevel = 3;
-
-            queueNumber = "N00" + to_string(normalCount);
-            normalCount++;
-
-            waitingTime = 20;
-            patientCategory = "Normal";
-        }
-        else
-        {
-            cout << "\nInvalid patient category!" << endl;
-            cout << "Please enter Emergency, Senior Citizen or Normal." << endl;
-
-            continue;
-        }
-
-        // Display registration information call funtions
-        cout << "\n========================================" << endl;
-        cout << "        REGISTRATION SUCCESSFUL         " << endl;
-        cout << "========================================" << endl;
-
-        cout << "Patient Name   : " << patientName << endl;
-        cout << "Age            : " << age << endl;
-        cout << "Category       : " << patientCategory << endl;
-        cout << "Queue Number   : " << queueNumber << endl;
-        cout << "Priority Level : " << priorityLevel << endl;
-        cout << "Arrival Time   : " << arrivalTime << endl;
-        cout << "Estimated Wait : " << waitingTime << " minutes" << endl;
-
-        cout << "\n----------------------------------------" << endl;
-
-        // Special message
-        if (priorityLevel == 1)
-        {
-            cout << "!!! EMERGENCY PATIENT !!!" << endl;
-            cout << "Please proceed to the emergency department." << endl;
-            cout << "Your case will be attended immediately." << endl;
-        }
-        else if (priorityLevel == 2)
-        {
-            cout << "PRIORITY PATIENT" << endl;
-            cout << "You will be served before normal patients." << endl;
-        }
-        else
-        {
-            cout << "STANDARD PATIENT" << endl;
-            cout << "Please wait until your queue number is called." << endl;
-        }
-
-        cout << "----------------------------------------" << endl;
-
-        // Ask for another patient
-        cout << "\nRegister another patient? (Y/N): ";
-        cin >> continueRegister;
-
-    } while (continueRegister == 'Y' || continueRegister == 'y');
+    } while (choice == 'y' || choice == 'Y');
 
     cout << "\n========================================" << endl;
-    cout << "       REGISTRATION SYSTEM CLOSED       " << endl;
+    cout << "        REGISTRATION SYSTEM CLOSED       " << endl;
     cout << "========================================" << endl;
 
     return 0;
 }
 
-//funtions _ info
- void getPatientInfo(string &patientName, int &age, string &patientCategory, string &arrivalTime){
- 
- cout << "Enter patient name: ";
-        cin.ignore();
-        getline(cin, patientName);
+void patientInformation(string &patientName, string &arrivalTime, string &patientCategory, int &age, string &patientCategoryL) {
+    cout << "\n========================================" << endl;
+    cout << "      HOSPITAL PATIENT REGISTRATION     " << endl;
+    cout << "========================================" << endl;
 
-        cout << "Enter age: ";
-        cin >> age;
+    cout << "Enter patient name: ";
+    getline(cin, patientName);
 
-        cin.ignore();
+    cout << "Enter patient age: ";
+    cin >> age;
+    cin.ignore();
 
-        cout << "Enter patient category (Emergency/Senior Citizen/Normal): ";
-        getline(cin, patientCategory);
-
-        cout << "Enter arrival time: ";
-        getline(cin, arrivalTime);
+    cout << "**PATIENT CATEGORY**" << endl;
+    cout << " - Emergency (E)" << endl;
+    cout << " - Senior Citizen (age 60+) (S)" << endl;
+    cout << " - Normal (N)" << endl;
+    cout << "\nEnter patient category below: ";
+    cin >> patientCategoryL;
+    cin.ignore(); // Bersihkan buffer selepas cin >> patientCategoryL
 }
-//funtions queue
+//function petingkan siapa kat bawah ni
 
-// funtion display
+//function untuk display maklumat pesakit
+
+//function untuk panggilan sape yang penting
+
