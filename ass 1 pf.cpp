@@ -51,27 +51,8 @@ int main() {
 
     return 0;
 }
+//function mintak maklumat pesakit
 
-void patientInformation(string &patientName, string &arrivalTime, string &patientCategory, int &age, string &patientCategoryL) {
-    cout << "\n========================================" << endl;
-    cout << "      HOSPITAL PATIENT REGISTRATION     " << endl;
-    cout << "========================================" << endl;
-
-    cout << "Enter patient name: ";
-    getline(cin, patientName);
-
-    cout << "Enter patient age: ";
-    cin >> age;
-    cin.ignore();
-
-    cout << "**PATIENT CATEGORY**" << endl;
-    cout << " - Emergency (E)" << endl;
-    cout << " - Senior Citizen (age 60+) (S)" << endl;
-    cout << " - Normal (N)" << endl;
-    cout << "\nEnter patient category below: ";
-    cin >> patientCategoryL;
-    cin.ignore(); // Bersihkan buffer selepas cin >> patientCategoryL
-}
 //function petingkan siapa kat bawah ni
 void getpriority(string &patientCategory, int &priorityLevel, int &waitingTime, string &queueNumber, int &emergencyCount, int &normalCount,
                  int &seniorCount, string &patientCategoryL, string &arrivalTime) {
