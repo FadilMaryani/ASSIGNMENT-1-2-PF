@@ -35,6 +35,7 @@ int main() {
         //function petingkan siapa
        getpriority(patientCategory, priorityLevel, waitingTime, queueNumber, emergencyCount, normalCount, seniorCount, patientCategoryL, arrivalTime);
         //function untuk display maklumat pesakit
+        displayPatientInformation(patientName, arrivalTime, patientCategory, age, priorityLevel, waitingTime, queueNumber);
         
         //function untuk panggilan sape yang penting
        
@@ -96,5 +97,18 @@ void getpriority(string &patientCategory, int &priorityLevel, int &waitingTime, 
 }
 //function untuk display maklumat pesakit
 
+void displayPatientInformation(string &patientName, string &arrivalTime, string &patientCategory, int &age, int &priorityLevel, int &waitingTime, string &queueNumber) {
+    cout << "\n======================================" << endl;
+    cout << "        REGISTRATION SUCCESSFUL     " << endl;
+    cout << "======================================" << endl;
+
+    cout << "Patient Name : " << patientName << endl;
+    cout << "Patient Age : " << age << endl;
+    cout << "Arrival Time : " << arrivalTime << endl;
+    cout << "Patient Category : " << patientCategory << endl;
+    cout << "Priority Level : " << priorityLevel << endl;
+    cout << "Waiting Time : " << waitingTime << " minutes" << endl;
+    cout << "Queue Number : " << queueNumber << endl;
+}
 //function untuk panggilan sape yang penting
 
